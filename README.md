@@ -55,8 +55,10 @@ parknow/
     ├── parking.js    # Lógica operacional do pátio, entrada/saída de veículos e cálculos
     └── admin.js      # Lógica de aprovação, bloqueio e extensão de planos de usuários
 
+```
 
-🧑‍🎓 Informações Acadêmicas
+## 🧑‍🎓 Informações Acadêmicas
+
 Instituição: Unifacvest
 
 Curso: Ciência da Computação
