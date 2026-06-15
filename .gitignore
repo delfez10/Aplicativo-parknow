@@ -1,0 +1,31 @@
+# Arquivos do Lovable / build
+node_modules/
+.vite/
+.vitepress/
+
+# Arquivos de configuração do Lovable
+vite.config.js
+vite.config.ts
+package.json
+package-lock.json
+yarn.lock
+bun.lock
+
+# Pastas internas do Lovable
+.workspace/
+.agents/
+.claude/
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo

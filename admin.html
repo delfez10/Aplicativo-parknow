@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ParkNow — Admin</title>
+  <link rel="icon" href="favicon.png" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="app admin-app">
+    <aside class="sidebar">
+      <header class="sidebar-header">
+        <div class="brand-row">
+          <div class="brand-logo sm admin">⚙</div>
+          <div>
+            <h1>ParkNow Admin</h1>
+            <p class="muted small">Painel de gestão</p>
+          </div>
+        </div>
+        <button id="logoutBtn" class="btn ghost sm">Sair</button>
+      </header>
+
+      <section class="card">
+        <h2>Resumo</h2>
+        <div class="stats">
+          <div><span class="muted small">Pendentes</span><strong id="statPending">0</strong></div>
+          <div><span class="muted small">Ativos</span><strong id="statActive">0</strong></div>
+          <div><span class="muted small">Bloqueados</span><strong id="statBlocked">0</strong></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Sobre</h2>
+        <p class="muted small">
+          Aprove novas contas definindo a duração do plano. Bloqueie contas
+          quando o pagamento estiver pendente ou estenda o plano quando o
+          cliente renovar.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Sistema</h2>
+        <div class="info-row" style="display:flex;justify-content:space-between;padding:0.4rem 0;border-bottom:1px solid var(--border);font-size:0.88rem">
+          <span class="muted">Sistema</span>
+          <strong>ParkNow</strong>
+        </div>
+        <div class="info-row" style="display:flex;justify-content:space-between;padding:0.4rem 0;border-bottom:1px solid var(--border);font-size:0.88rem">
+          <span class="muted">E-mail</span>
+          <strong>contato@parknow.com</strong>
+        </div>
+        <div class="info-row" style="display:flex;justify-content:space-between;padding:0.4rem 0;font-size:0.88rem">
+          <span class="muted">Telefone</span>
+          <strong>(11) 99999-9999</strong>
+        </div>
+      </section>
+    </aside>
+
+    <main class="lot">
+      <header class="lot-header">
+        <h2>Solicitações pendentes</h2>
+      </header>
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Usuário</th>
+              <th>Solicitado em</th>
+              <th>Plano (dias)</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="pendingBody"></tbody>
+        </table>
+      </div>
+
+      <header class="lot-header" style="margin-top: 1rem;">
+        <h2>Contas de clientes</h2>
+      </header>
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Usuário</th>
+              <th>Status</th>
+              <th>Plano</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="clientsBody"></tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

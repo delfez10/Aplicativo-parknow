@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ParkNow — Estacionamento</title>
+  <link rel="icon" href="favicon.png" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <header class="sidebar-header">
+        <div class="brand-row">
+          <div class="brand-logo sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M5 13l1.5-4.5A2 2 0 0 1 8.4 7h7.2a2 2 0 0 1 1.9 1.5L19 13"/><rect x="3" y="13" width="18" height="6" rx="1.5"/><circle cx="7.5" cy="18.5" r="1.3"/><circle cx="16.5" cy="18.5" r="1.3"/></svg></div>
+          <div>
+            <h1>ParkNow</h1>
+            <p class="muted small" id="welcome">Olá</p>
+          </div>
+        </div>
+        <button id="logoutBtn" class="btn ghost sm">Sair</button>
+      </header>
+
+      <section class="card">
+        <h2>Configuração</h2>
+        <label>Número de vagas
+          <div class="row">
+            <input type="number" id="spotCount" min="1" max="200" value="12" />
+            <button id="applySpots" class="btn primary sm">Aplicar</button>
+          </div>
+        </label>
+        <p class="muted small">Define quantas vagas serão desenhadas no pátio.</p>
+      </section>
+
+      <section class="card">
+        <h2>Entrada de veículo</h2>
+        <label>Placa
+          <input type="text" id="plate" maxlength="8" placeholder="ABC-1D23" />
+        </label>
+        <label>Tipo
+          <select id="vType">
+            <option value="small">Carro pequeno (R$ 5/h)</option>
+            <option value="large">Carro grande (R$ 7/h)</option>
+            <option value="moto">Moto (R$ 3/h)</option>
+          </select>
+        </label>
+        <button id="parkBtn" class="btn primary">Estacionar</button>
+      </section>
+
+      <section class="card stats">
+        <div>
+          <span class="muted small">Ocupadas</span>
+          <strong id="statOcc">0</strong>
+        </div>
+        <div>
+          <span class="muted small">Livres</span>
+          <strong id="statFree">0</strong>
+        </div>
+        <div>
+          <span class="muted small">Total</span>
+          <strong id="statTotal">0</strong>
+        </div>
+      </section>
+
+      <p id="msg" class="auth-msg"></p>
+
+      <section class="card">
+        <h2>Sistema</h2>
+        <div class="info-row" style="display:flex;justify-content:space-between;padding:0.4rem 0;border-bottom:1px solid var(--border);font-size:0.88rem">
+          <span class="muted">Sistema</span>
+          <strong>ParkNow</strong>
+        </div>
+        <div class="info-row" style="display:flex;justify-content:space-between;padding:0.4rem 0;border-bottom:1px solid var(--border);font-size:0.88rem">
+          <span class="muted">E-mail</span>
+          <strong>contato@parknow.com</strong>
+        </div>
+        <div class="info-row" style="display:flex;justify-content:space-between;padding:0.4rem 0;font-size:0.88rem">
+          <span class="muted">Telefone</span>
+          <strong>(11) 99999-9999</strong>
+        </div>
+      </section>
+    </aside>
+
+    <main class="lot">
+      <header class="lot-header">
+        <h2>Pátio do Estacionamento</h2>
+        <div class="legend">
+          <span><i class="dot small"></i> Pequeno</span>
+          <span><i class="dot large"></i> Grande</span>
+          <span><i class="dot moto"></i> Moto</span>
+          <span><i class="dot free"></i> Livre</span>
+        </div>
+      </header>
+      <div id="spotsGrid" class="spots-grid"></div>
+    </main>
+  </div>
+
+  <!-- Modal de saída -->
+  <div id="exitModal" class="modal hidden">
+    <div class="modal-card">
+      <h2>Saída do veículo</h2>
+      <div id="exitInfo"></div>
+      <div class="modal-actions">
+        <button id="cancelExit" class="btn ghost">Cancelar</button>
+        <button id="confirmExit" class="btn primary">Confirmar saída</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/parking.js"></script>
+</body>
+</html>
